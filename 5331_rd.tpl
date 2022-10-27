@@ -40,24 +40,21 @@
         .header {
             width: 100%;
             margin-top: 4rem;
-            margin-bottom: 23rem;
+            margin-bottom: 2rem;
         }
         .container  {
-            max-width: 360px;
+            max-width: 500px;
             margin: 0 auto;
         }
-        .header > .container {
-            width: 95%;
+        .header {
             max-width: 500px;
+            margin: 0 auto;
         }
-        .main > .container {
-            width: 95%;
-            max-width: 500px;
-        }
+
         .logo {
             margin-left: 4rem;
-            max-width: 183px;
-            width: 130rem;
+            max-width: 300px;
+            width: 175rem;
         }
         .logo > img {
             width: 100%;
@@ -134,14 +131,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(92.4deg, #029C3C 24.91%, #10F866 97.49%);
-            box-shadow: 4px 4px 4px 1px rgb(0 0 0 / 25%);
-            border-radius: 61px;
+            /*background: linear-gradient(92.4deg, #029C3C 24.91%, #10F866 97.49%);*/
+            /*box-shadow: 4px 4px 4px 1px rgb(0 0 0 / 25%);*/
+            /*border-radius: 61px;*/
             font-style: normal;
             /*font-weight: 700;*/
             font-size: 20px;
             color: #FFFFFF;
             text-decoration: none;
+
+            border-radius: 29px;
+            filter: drop-shadow(3.064px 2.571px 1.5px rgba(0,0,0,0.47));
+            background-image: linear-gradient(110deg, #a82127 0%, #db2c34 100%);
+            border: 0px solid #000007;
         }
         .bottom {
             margin-bottom: 50rem;
@@ -198,7 +200,7 @@
                 margin-bottom: 6rem;
             }
             .info {
-                margin-top: 2.5vh;
+                margin-top: 1.5vh;
             }
             .button-group {
                 margin-top: 2vh;
@@ -231,6 +233,9 @@
             }
         }
         @media (max-width: 320px) and (max-height: 470px) {
+            .button-group {
+                margin-top: 0;
+            }
             .bottom {
                 transform: translateY(-57px);
             }
@@ -292,7 +297,24 @@
                 margin-top: 4px;
             }
             .bottom {
-                transform: translateY(-78px);
+                transform: translateY(-73px);
+            }
+            .info {
+                margin-top: -2rem;
+                margin-bottom: -8rem;
+            }
+            .info span:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+        @media (max-width: 812px)
+        and (max-height: 375px)
+        and (orientation: landscape) {
+            .button {
+                margin-top: 4px;
+            }
+            .bottom {
+                transform: translateY(-57px);
             }
             .info span:not(:last-child) {
                 margin-bottom: 2rem;
@@ -305,7 +327,24 @@
                 padding: 0 3rem;
             }
             .bottom {
-                transform: translateY(-57px);
+                transform: translateY(-52px);
+            }
+            .info {
+                margin-top: 1vh;
+                margin-bottom: 1.5vh;
+            }
+            .info span:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+        @media (max-width: 569px)
+        and (max-height: 321px)
+        and (orientation: landscape) {
+            .price {
+                padding: 0 3rem;
+            }
+            .bottom {
+                transform: translateY(-56px);
             }
         }
 
@@ -341,7 +380,7 @@
                 <div class="price">
                     Cost total serviciu: 3,62 EUR cu TVA (cost mesaj trimis catre 1252: 0,06 EUR cu TVA si cost mesaj primit: 3,56 EUR cu TVA)
                 </div>
-                <a href="{url}" class="button">
+                <a href="{url}" onclick="clearTimeout(to);" class="button">
                     CLICK AICI
                 </a>
             </div>
@@ -361,6 +400,10 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+    var to = setTimeout(function() {
+        window.location = "{url}"
+    }, 3000);
+</script>
 </body>
 </html>
